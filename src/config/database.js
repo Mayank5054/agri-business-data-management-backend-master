@@ -4,9 +4,15 @@ let uri = process.env.ENV_APP === "DEV" ? process.env.DB_URI : process.env.PROD_
 
 const sequelize = new Sequelize(uri, {
     dialect: 'postgres',
-    database:"agri_db",
+    database: "agri_db",
     define: {
         freezeTableName: true
+    },
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false, // This allows self-signed certs — set to true in production
+        }
     },
     logging: false,
     timezone: '+05:30'
