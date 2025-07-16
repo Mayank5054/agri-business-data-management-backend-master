@@ -1,0 +1,80 @@
+components:
+  schemas:
+    Goat:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        password:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        isDeleted:
+          type: boolean
+        
+    Organisation:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        phone:
+          type: string
+        address:
+          type: string
+        contactPerson:
+          type: string
+        gstNumber:
+          type: string
+        website:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        isDeleted:
+          type: boolean  
+
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        password:
+          type: string
+        phone:
+          type: string
+        organisationId:
+          type: integer
+          format: int64
+          ref: '#/components/schemas/Organisation'
+        userType:
+          type: string
+          enum:
+            - admin
+            - user
+        isActive:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        isDeleted:
+          type: boolean
+

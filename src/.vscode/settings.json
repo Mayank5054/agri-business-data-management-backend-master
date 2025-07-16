@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/029d33bf-661a-444e-b2b3-f5bc85a74492/resourceGroups/AZ-204/providers/Microsoft.Web/sites/Agriretro",
+    "appService.deploySubpath": "."
+}
